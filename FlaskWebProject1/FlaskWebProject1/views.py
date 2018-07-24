@@ -71,6 +71,10 @@ def about():
         message='Your application description page.'
     )
 
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
 
 @lm.user_loader
 def load_user(id):
