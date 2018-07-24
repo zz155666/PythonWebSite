@@ -14,7 +14,8 @@ app.config.from_object('config')
 db = SQLAlchemy(app)
 
 lm = LoginManager()
-lm.init_app(FlaskWebProject1)
-oid = OpenID(FlaskWebProject1, os.path.join(basedir, 'tmp'))
+lm.init_app(app)
+lm.login_view = 'login'
+oid = OpenID(app, os.path.join(basedir, 'tmp'))
 
 from FlaskWebProject1 import views, models
