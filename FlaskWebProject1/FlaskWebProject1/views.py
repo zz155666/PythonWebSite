@@ -6,7 +6,7 @@ from datetime import datetime
 from flask import render_template, flash, redirect, session, url_for, request,g
 from flask_login import login_user, logout_user, current_user, login_required
 from FlaskWebProject1 import app, db, lm, oid
-from .forms import LoginForm
+from .forms import LoginForm,RegistrationForm
 from .models import User
 
 @app.route('/')
@@ -81,6 +81,21 @@ def about():
 def logout():
     logout_user()
     return redirect(url_for('index'))
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if g.user is not None and g.user.is_authenticated:
+        return redirect(url_for('index'))
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user=User(nickname=form.nickname.data,email=form.email.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Congratulations, you are now a registered user!')
+        return redirect(url_for('login'))
+    return render_template('register.html', title='Register', form=form)
 
 @lm.user_loader
 def load_user(id):
