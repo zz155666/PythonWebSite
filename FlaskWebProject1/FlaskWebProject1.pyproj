@@ -60,6 +60,7 @@
     <Content Include="FlaskWebProject1\templates\index1.html" />
     <Content Include="FlaskWebProject1\templates\login.html" />
     <Content Include="FlaskWebProject1\templates\register.html" />
+    <None Include="FolderProfile.pubxml" />
     <Content Include="requirements.txt" />
     <Content Include="FlaskWebProject1\static\content\bootstrap.css" />
     <Content Include="FlaskWebProject1\static\content\bootstrap.min.css" />
