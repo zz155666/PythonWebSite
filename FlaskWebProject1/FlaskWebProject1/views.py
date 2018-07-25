@@ -98,6 +98,23 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
+#用户信息页
+@app.route('/user/<nickname>')
+@login_required
+def user(nickname):
+    user=User.query.filter_by(nickname=nickname).first()
+    if user==None:
+        falsh('User'+nickname+'not found')
+        return redirect(url_for('index'))
+    posts = [
+        { 'author': user, 'body': 'Test post #1' },
+        { 'author': user, 'body': 'Test post #2' }
+    ]
+    return render_template('user.html',
+        user = user,
+        posts = posts)
+
+
 @lm.user_loader
 def load_user(id):
     return User.query.get(int(id))

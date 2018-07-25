@@ -25,6 +25,9 @@ class User(db.Model):
     def check_password(self, password):
         return check_password_hash(self.passward, password)
 
+    def avatar(self,size):
+        return 'http://www.gravatar.com/avatar/f9879d71855b5ff21e4963273a886bfc?d=mm&s=' + str(size)
+
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key = True)
