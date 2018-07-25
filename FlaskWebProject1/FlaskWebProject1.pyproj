@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FlaskWebProject1\templates\base.html" />
+    <Content Include="FlaskWebProject1\templates\edit.html" />
     <Content Include="FlaskWebProject1\templates\index1.html" />
     <Content Include="FlaskWebProject1\templates\login.html" />
     <Content Include="FlaskWebProject1\templates\post.html" />
