@@ -8,6 +8,7 @@ from flask_login import login_user, logout_user, current_user, login_required
 from FlaskWebProject1 import app, db, lm, oid
 from .forms import LoginForm,RegistrationForm
 from .models import User
+from werkzeug.urls import url_parse
 
 @app.route('/')
 @app.route('/index')
