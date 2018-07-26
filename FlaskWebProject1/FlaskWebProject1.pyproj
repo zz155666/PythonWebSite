@@ -56,6 +56,8 @@
     <Folder Include="FlaskWebProject1\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FlaskWebProject1\templates\404.html" />
+    <Content Include="FlaskWebProject1\templates\500.html" />
     <Content Include="FlaskWebProject1\templates\base.html" />
     <Content Include="FlaskWebProject1\templates\edit.html" />
     <Content Include="FlaskWebProject1\templates\index1.html" />
