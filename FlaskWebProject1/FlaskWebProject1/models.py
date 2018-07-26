@@ -29,6 +29,18 @@ class User(db.Model):
     def avatar(self,size):
         return 'http://www.gravatar.com/avatar/f9879d71855b5ff21e4963273a886bfc?d=mm&s=' + str(size)
 
+    @staticmethod
+    def make_unique_nickname(nickname):
+        if User.query.filter_by(nickname = nickname).first() == None:
+         return nickname
+        version = 2
+        while True:
+            new_nickname = nickname + str(version)
+            if User.query.filter_by(nickname = new_nickname).first() == None:
+                break
+            version+=1
+        return new_nickname
+
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key = True)
