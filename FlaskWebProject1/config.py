@@ -17,4 +17,6 @@ OPENID_PROVIDERS = [
 # pagination
 POSTS_PER_PAGE = 3
 
+WHOOSH_BASE = os.path.join(basedir, 'search.db')
+
 
