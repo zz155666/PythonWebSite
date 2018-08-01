@@ -43,6 +43,9 @@
     <Compile Include="FlaskWebProject1\models.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FlaskWebProject1\momentjs.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="FlaskWebProject1\__init__.py" />
     <Compile Include="FlaskWebProject1\views.py" />
@@ -56,6 +59,8 @@
     <Folder Include="FlaskWebProject1\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FlaskWebProject1\static\scripts\moment.min.js" />
+    <Content Include="FlaskWebProject1\static\scripts\moment.js" />
     <Content Include="FlaskWebProject1\templates\404.html" />
     <Content Include="FlaskWebProject1\templates\500.html" />
     <Content Include="FlaskWebProject1\templates\base.html" />
