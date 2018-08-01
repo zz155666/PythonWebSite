@@ -7,6 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_openid import OpenID
 from config import basedir
+from flask_moment import Moment
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -28,4 +29,8 @@ lm.init_app(app)
 lm.login_view = 'login'
 oid = OpenID(app, os.path.join(basedir, 'tmp'))
 
-from FlaskWebProject1 import views, models
+moment = Moment(app)
+
+
+
+from FlaskWebProject1 import views, models,momentjs
