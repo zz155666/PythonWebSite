@@ -8,6 +8,7 @@ public class CDPlayer implements MediaPlayer {
 
   @Autowired
   public CDPlayer(CompactDisc cd) {
+
     this.cd = cd;
   }
 
@@ -15,4 +16,8 @@ public class CDPlayer implements MediaPlayer {
     cd.play();
   }
 
+  @Autowired
+  public void setCompactDisc(CompactDisc cd){
+    this.cd = cd;
+  }
 }

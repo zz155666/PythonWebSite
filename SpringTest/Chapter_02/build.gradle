@@ -16,4 +16,7 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-context', version: '5.0.8.RELEASE'
     // https://mvnrepository.com/artifact/org.springframework/spring-test
     testCompile group: 'org.springframework', name: 'spring-test', version: '5.0.8.RELEASE'
+    // https://mvnrepository.com/artifact/com.github.stefanbirkner/system-rules
+    testCompile group: 'com.github.stefanbirkner', name: 'system-rules', version: '1.18.0'
+
 }
