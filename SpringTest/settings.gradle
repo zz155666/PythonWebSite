@@ -1,3 +1,4 @@
 rootProject.name = 'SpringTest'
 include 'Chapter_02'
+include 'Chapter_03'
 
