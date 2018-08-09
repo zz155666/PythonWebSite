@@ -4,7 +4,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="compactDisc" class="soundsystem.SgtPeppers" />
+    <bean id="compactDisc" class="soundsystem.BlankDisc">
+        <constructor-arg value="123"/>
+        <constructor-arg value="123"/>
+        <constructor-arg>
+            <list>
+                <value>1223</value>
+                <value>1223</value>
+                <value>1223</value>
+                <value>1223</value>
+            </list>
+        </constructor-arg>
+    </bean>
 
     <!--<bean id="cdPlayer" class="soundsystem.CDPlayer">
         <constructor-arg ref="compactDisc"/>
