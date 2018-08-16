@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Chapter_05_Spittr:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Chapter_05_Spittr_jar</output-path>
+    <root id="archive" name="Chapter_05_Spittr.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/Chapter_05_Spittr/src/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
