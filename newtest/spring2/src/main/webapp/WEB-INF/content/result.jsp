@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>测试Model</title>
+<title>测试</title>
 </head>
 <body>
 访问request作用范围域中的model对象：${requestScope.user.username }<br>

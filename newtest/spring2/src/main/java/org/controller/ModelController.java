@@ -5,6 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.jws.WebParam;
 
 
 /**
@@ -26,7 +29,7 @@ public class ModelController {
         User user=new User();
         user.setUsername("test");
         model.addAttribute("user",user);
-        return "result1";
+        return "result";
     }
     @RequestMapping(value="/modelMapTest")
     public String modelMapTest(ModelMap modelmap){
@@ -34,6 +37,15 @@ public class ModelController {
         User user=new User();
         user.setUsername("test");
         modelmap.addAttribute("user",user);
-        return "result2";
+        return "result";
+    }
+    @RequestMapping(value="/ModelAndViewTest")
+    public ModelAndView modelMapTest(ModelAndView mv){
+        System.out.println("modelMapTest");
+        User user=new User();
+        user.setUsername("test");
+        mv.addObject("user",user);
+        mv.setViewName("result");
+        return mv;
     }
 }
