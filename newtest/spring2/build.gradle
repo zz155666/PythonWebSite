@@ -26,4 +26,7 @@ dependencies {
     compile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
     // https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api
     compile group: 'javax.servlet.jsp', name: 'javax.servlet.jsp-api', version: '2.3.3'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.6'
+
 }
