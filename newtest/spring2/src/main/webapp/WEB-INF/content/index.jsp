@@ -12,7 +12,7 @@ $(document).ready(function(){
 	testRequestBody();
 });
 function testRequestBody(){
-	$.ajax("${pageContext.request.contextPath}/json/testRequestBody",// 发送请求的URL字符串。
+	$.ajax("${pageContext.request.contextPath}/json/testRequestBody2",// 发送请求的URL字符串。
 			{
 			dataType : "json", // 预期服务器返回的数据类型。
    			type : "post", //  请求方式 POST或GET

@@ -1,5 +1,6 @@
 package org.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -23,5 +24,14 @@ public class BookController {
         book.setAuthor("ceshi");
         response.setContentType("text/html;charset=UTF-8");
         response.getWriter().println(mapper.writeValueAsString(book));
+    }
+
+    @RequestMapping("/testRequestBody2")
+    public void setJson2(@RequestBody Book book,
+                        HttpServletResponse response) throws Exception{
+        System.out.println(JSONObject.toJSONString(book));
+        book.setAuthor("ceshi");
+        response.setContentType("text/html;charset=UTF-8");
+        response.getWriter().println(JSONObject.toJSONString(book));
     }
 }
