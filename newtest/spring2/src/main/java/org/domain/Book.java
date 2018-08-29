@@ -43,6 +43,12 @@ public class Book implements Serializable {
         this.author = author;
     }
 
+    public Book (Integer id,String name,String author){
+        this.id=id;
+        this.name=name;
+        this.author=author;
+    }
+
     @Override
     public String toString() {
         return "Book [id=" + id + ", name=" + name + ", author=" + author + "]";

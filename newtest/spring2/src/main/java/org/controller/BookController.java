@@ -8,8 +8,11 @@ import org.domain.Book;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
@@ -33,5 +36,14 @@ public class BookController {
         book.setAuthor("ceshi");
         response.setContentType("text/html;charset=UTF-8");
         response.getWriter().println(JSONObject.toJSONString(book));
+    }
+
+    @RequestMapping("/testRequestBody3")
+    @ResponseBody
+    public Object getJson(){
+        List<Book> list=new ArrayList<Book>();
+        list.add(new Book(1,"test","1111"));
+        list.add(new Book(2,"test2","2222"));
+        return list;
     }
 }

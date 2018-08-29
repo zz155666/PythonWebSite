@@ -9,6 +9,6 @@ public class IndexController {
     @RequestMapping("/")
     public String helloWorld(Model model){
         model.addAttribute("message","Hello World!");
-        return "index";
+        return "responsetest";
     }
 }
