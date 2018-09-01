@@ -5,7 +5,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.domain.Book;
+import org.exception.BookException;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -45,5 +47,15 @@ public class BookController {
         list.add(new Book(1,"test","1111"));
         list.add(new Book(2,"test2","2222"));
         return list;
+    }
+
+    @GetMapping("/findb")
+    public String find() throws Exception{
+        try{
+            int i=5/0;
+            return "success";
+        }catch (Exception e){
+            throw new BookException();
+        }
     }
 }

@@ -51,4 +51,19 @@
 		  class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		  p:prefix="/WEB-INF/content/" p:suffix=".jsp"/>
 
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver"
+          p:defaultErrorView="error"
+          p:exceptionAttribute="ex">
+        <!-- 异常映射
+            exceptionMappings表示映射的异常，接受参数是一个Properties
+            key是异常类名，value是处理异常的页面
+        -->
+        <property name="exceptionMappings">
+            <props>
+                <prop key="IOException">ioerror</prop>
+                <prop key="SQLException">sqlerror</prop>
+            </props>
+        </property>
+    </bean>
+
 </beans>
