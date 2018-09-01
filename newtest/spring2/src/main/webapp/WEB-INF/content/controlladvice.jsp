@@ -16,7 +16,7 @@
     <script type="text/javascript">
         $(function(){
             $("#search").click(function(){
-                $.post("${pageContext.request.contextPath}/search",null,
+                $.post("${pageContext.request.contextPath}/searcho",null,
                     function(data){
                         // 处理异常
                         if (data.message)

@@ -22,13 +22,4 @@ public class Test2ExceptionController {
         int i=5/0;
         return "success";
     }
-
-    @ExceptionHandler(value = Exception.class)
-    public ModelAndView testErrorHandler(Exception e){
-        System.out.println("TestController testErrorHandler().......");
-        ModelAndView mav=new ModelAndView();
-        mav.addObject("ex",e);
-        mav.setViewName("error");
-        return mav;
-    }
 }
