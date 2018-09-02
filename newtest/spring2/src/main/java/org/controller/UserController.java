@@ -1,6 +1,7 @@
 package org.controller;
 
 import org.domain.User;
+import org.domain.User2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -59,4 +60,15 @@ public class UserController {
         return "loginForm";
     }
 
+    @GetMapping(value = "/checkboxForm")
+    public String registerForm(Model model){
+        User2 user=new User2();
+        user.setReader(true);
+        List<String> list=new ArrayList<String>();
+        list.add("JAVAEE");
+        list.add("Spring");
+        user.setCourses(list);
+        model.addAttribute("user",user);
+        return "checkboxForm";
+    }
 }
