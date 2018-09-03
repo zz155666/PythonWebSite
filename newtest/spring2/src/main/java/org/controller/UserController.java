@@ -2,6 +2,7 @@ package org.controller;
 
 import org.domain.User;
 import org.domain.User2;
+import org.domain.User3;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/user")
@@ -71,4 +74,35 @@ public class UserController {
         model.addAttribute("user",user);
         return "checkboxForm";
     }
+    @GetMapping(value = "/checkboxesForm")
+    public String registerForms(Model model){
+        User3 user=new User3();
+        List<String> list=new ArrayList<String>();
+        list.add("JAVAEE");
+        list.add("Spring");
+        user.setCources(list);
+        List<String> courceList=new ArrayList<String>();
+        courceList.add("JAVAEE");
+        courceList.add("Mybatis");
+        courceList.add("Spring");
+        model.addAttribute("user",user);
+        model.addAttribute("courseList",courceList);
+        return "checkboxesForm";
+    }
+    @GetMapping(value = "/checkboxesForm2")
+    public String registerForms2(Model model){
+        User3 user=new User3();
+        List<String> list=new ArrayList<String>();
+        list.add("1");
+        list.add("2");
+        user.setCources(list);
+        Map<String,String> courceList=new HashMap<String,String>();
+        courceList.put("1","JAVAEE");
+        courceList.put("2","Mybatis");
+        courceList.put("3","Spring");
+        model.addAttribute("user",user);
+        model.addAttribute("courseList",courceList);
+        return "checkboxesForm";
+    }
+
 }

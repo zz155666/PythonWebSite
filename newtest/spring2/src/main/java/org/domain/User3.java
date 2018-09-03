@@ -20,7 +20,7 @@ public class User3 implements Serializable {
         super();
     }
     public List<String> getCources(){
-        return cources;
+        return this.cources;
     }
     public void setCources(List<String> cources){
         this.cources=cources;
