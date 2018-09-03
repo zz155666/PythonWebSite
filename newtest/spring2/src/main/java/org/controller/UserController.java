@@ -1,8 +1,6 @@
 package org.controller;
 
-import org.domain.User;
-import org.domain.User2;
-import org.domain.User3;
+import org.domain.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -103,6 +101,22 @@ public class UserController {
         model.addAttribute("user",user);
         model.addAttribute("courseList",courceList);
         return "checkboxesForm";
+    }
+
+    @GetMapping(value = "/checkboxesForm3")
+    public String registerForm3(Model model){
+        Employee employee=new Employee();
+        Dept dept=new Dept(1,"开发部");
+        List<Dept> list=new ArrayList<Dept>();
+        list.add(dept);
+        employee.setDepts(list);
+        List<Dept> deptList=new ArrayList<Dept>();
+        deptList.add(dept);
+        deptList.add(new Dept(2,"销售部"));
+        deptList.add(new Dept(3,"财务部"));
+        model.addAttribute("employee",employee);
+        model.addAttribute("deptList",deptList);
+        return "checkboxesForm3";
     }
 
 }
