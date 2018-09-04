@@ -119,4 +119,24 @@ public class UserController {
         return "checkboxesForm3";
     }
 
+    @GetMapping("/selectForm")
+    public String selectForm(Model model){
+        User4 user=new User4();
+        user.setDeptId(2);
+        model.addAttribute("user",user);
+        return "selectForm";
+    }
+    @GetMapping("selectForm2")
+    public String selectForm2(Model model){
+        User4 user=new User4();
+        user.setDeptId(2);
+        Map<Integer,String> deptmap=new HashMap<Integer,String>();
+        deptmap.put(1,"财务部");
+        deptmap.put(2,"开发部");
+        deptmap.put(3,"销售部");
+        model.addAttribute("user",user);
+        model.addAttribute("deptmap",deptmap);
+        return "selectForm2";
+    }
+
 }
