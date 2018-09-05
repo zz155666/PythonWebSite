@@ -3,10 +3,11 @@ package org.controller;
 import org.domain.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.DataBinder;
+import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+import org.validator.UserValidator;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -137,6 +138,24 @@ public class UserController {
         model.addAttribute("user",user);
         model.addAttribute("deptmap",deptmap);
         return "selectForm2";
+    }
+
+    @GetMapping(value = "/registerForm2")
+    public String registerForm2(Model model){
+        User5 user=new User5();
+        model.addAttribute("user5",user);
+        return "registerForm2";
+    }
+    @InitBinder
+    public void initBinder(DataBinder binder){
+        binder.setValidator(new UserValidator());
+    }
+    @PostMapping(value = "/register2")
+    public String register(@Validated User5 user5, Errors errors){
+        if(errors.hasFieldErrors()){
+            return "registerForm2";
+        }
+        return "submit";
     }
 
 }
