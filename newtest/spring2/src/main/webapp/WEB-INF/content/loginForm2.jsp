@@ -16,6 +16,7 @@
     <title>测试基于浏览器请求的国际化</title>
 </head>
 <body>
+<a href="/user2/loginForm?request_locale=zh_CN">中文</a>|<a href="/user2/loginForm?request_locale=en_US">英文</a>
 <!-- 使用message标签来输出国际化信息 -->
 <h3><spring:message code="title"/></h3>
 <form:form modelAttribute="user" method="post" action="login" >
