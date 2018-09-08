@@ -2,6 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c"
 	   xmlns:mvc="http://www.springframework.org/schema/mvc"
 	   xmlns:util="http://www.springframework.org/schema/util"
 	   xmlns:context="http://www.springframework.org/schema/context"
@@ -27,11 +28,11 @@
 
     <!-- 自定义的类型转换器 -->
     <bean id="conversionService"
-          class="org.springframework.context.support.ConversionServiceFactoryBean">
-        <property name="converters">
+          class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
             <list>
-                <bean class="org.converter.StringToDateConverter"
-                      p:datePattern="yyyy-MM-dd"></bean>
+                <bean class="org.formatter.DateFormatter"
+                      c:_0="yyyy-MM-dd"></bean>
             </list>
         </property>
     </bean>
