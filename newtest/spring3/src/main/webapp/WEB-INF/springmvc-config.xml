@@ -22,29 +22,19 @@
 	<!-- 静态资源处理 -->
 	<mvc:default-servlet-handler/>
 
-	<!-- 设置配置方案 -->
-	<mvc:annotation-driven>
-		<!-- 设置不使用默认的消息转换器 -->
-		<mvc:message-converters register-defaults="false">
-			<!-- 配置Spring的转换器 -->
-			<bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
-			<bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/>
-			<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
-			<bean class="org.springframework.http.converter.BufferedImageHttpMessageConverter"/>
-			<!-- 配置fastjson中实现HttpMessageConverter接口的转换器 -->
-			<bean id="fastJsonHttpMessageConverter"
-				  class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
-				<!-- 加入支持的媒体类型：返回contentType -->
-				<property name="supportedMediaTypes">
-					<list>
-						<!-- 这里顺序不能反，一定先写text/html,不然ie下会出现下载提示 -->
-						<value>text/html;charset=UTF-8</value>
-						<value>application/json;charset=UTF-8</value>
-					</list>
-				</property>
-			</bean>
-		</mvc:message-converters>
-	</mvc:annotation-driven>
+    <!-- 装配自定义的类型转换器 -->
+    <mvc:annotation-driven conversion-service="conversionService"/>
+
+    <!-- 自定义的类型转换器 -->
+    <bean id="conversionService"
+          class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <list>
+                <bean class="org.converter.StringToDateConverter"
+                      p:datePattern="yyyy-MM-dd"></bean>
+            </list>
+        </property>
+    </bean>
 
 	<!-- 视图解析器  p:prefix属性表示前缀  p:suffix 表示后缀  -->
 	<bean id="viewResolver"
