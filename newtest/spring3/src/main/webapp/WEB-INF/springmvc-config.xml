@@ -22,7 +22,12 @@
 
 	<!-- 静态资源处理 -->
 	<mvc:default-servlet-handler/>
-
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/*"/>
+			<bean class="org.interceptor.AuthorizationInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
     <!-- 装配自定义的类型转换器 -->
     <mvc:annotation-driven conversion-service="conversionService"/>
 
