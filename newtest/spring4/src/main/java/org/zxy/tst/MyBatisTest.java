@@ -21,7 +21,7 @@ public class MyBatisTest {
                     .build(is);
             sqlSession = sqlSessionFactory.openSession();
             // 创建User对象
-            User user = new User("admin", "1", 11);
+            User user = new User("admin", "男", 11);
             // 插入数据
             sqlSession.insert("org.zxy.mapper.UserMapper.save", user);
             // 提交事务
