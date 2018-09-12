@@ -23,7 +23,7 @@ public class MyBatisTest {
             // 创建User对象
             User user = new User("admin", "男", 11);
             // 插入数据
-            sqlSession.insert("org.zxy.mapper.UserMapper.save", user);
+            sqlSession.insert("org.zxy.mapper.UserMapper.saveUser", user);
             // 提交事务
             sqlSession.commit();
         } catch (Exception e) {
