@@ -30,10 +30,10 @@
         <result property="sex" column="sex"/>
         <result property="age" column="age"/>
         <association property="clazz" column="clazz_id" javaType="org.zxy.domain.Clazz"
-                     select="selectStudentWithId"/>
+                     select="selectClazzWithId"/>
     </resultMap>
     <!-- 根据班级id查询班级 -->
-    <select id="selectClazzWithId" resultType="org.fkit.domain.Clazz">
+    <select id="selectClazzWithId" resultType="org.zxy.domain.Clazz">
   	SELECT * FROM TB_CLAZZ where id = #{id}
     </select>
 
