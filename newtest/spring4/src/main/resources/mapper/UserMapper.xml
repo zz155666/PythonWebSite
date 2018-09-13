@@ -9,14 +9,14 @@
         parameterType属性指明插入时使用的参数类型
         useGeneratedKeys="true"表示使用数据库的自动增长策略
      -->
-    <insert id="saveUser" parameterType="user" useGeneratedKeys="true"  keyProperty="id">
+    <insert id="saveUser" parameterType="org.zxy.domain.User" useGeneratedKeys="true"  keyProperty="id">
   	INSERT INTO TB_USER(name,sex,age)
   	VALUES(#{name},#{sex},#{age})
     </insert>
-    <select id="selectUser" parameterType="int" resultType="user">
+    <select id="selectUser" parameterType="int" resultType="org.zxy.domain.User">
         SELECT * FROM TB_USER WHERE id=#{id}
     </select>
-    <update id="modifyUser" parameterType="user">
+    <update id="modifyUser" parameterType="org.zxy.domain.User">
   	UPDATE TB_USER
   	SET name = #{name},sex = #{sex},age = #{age}
   	WHERE id = #{id}
@@ -24,7 +24,6 @@
     <delete id="removeUser" parameterType="int">
   	DELETE FROM TB_USER WHERE id = #{id}
    </delete>
-
     <resultMap id="studentResultMap" type="org.zxy.domain.Student">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
@@ -41,6 +40,10 @@
     <!-- 查询所有学生信息 -->
     <select id="selectStudent" resultMap="studentResultMap">
   	SELECT * FROM TB_STUDENT
+	</select>
+	
+    <select id="selectUserMap" resultType="map">
+        SELECT * FROM TB_USER
     </select>
 
 </mapper>
