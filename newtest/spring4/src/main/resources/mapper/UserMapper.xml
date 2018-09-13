@@ -25,4 +25,22 @@
   	DELETE FROM TB_USER WHERE id = #{id}
    </delete>
 
+    <resultMap id="studentResultMap" type="org.zxy.domain.Student">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="sex" column="sex"/>
+        <result property="age" column="age"/>
+        <association property="clazz" column="clazz_id" javaType="org.zxy.domain.Clazz"
+                     select="selectStudentWithId"/>
+    </resultMap>
+    <!-- 根据班级id查询班级 -->
+    <select id="selectClazzWithId" resultType="org.fkit.domain.Clazz">
+  	SELECT * FROM TB_CLAZZ where id = #{id}
+    </select>
+
+    <!-- 查询所有学生信息 -->
+    <select id="selectStudent" resultMap="studentResultMap">
+  	SELECT * FROM TB_STUDENT
+    </select>
+
 </mapper>
