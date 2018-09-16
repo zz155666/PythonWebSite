@@ -8,6 +8,9 @@
 	<!-- 指定 MyBatis 所用日志的具体实现 -->
 	<settings>
 		<setting name="logImpl" value="LOG4J"/>
+        <!-- 要使延迟加载生效必须配置下面两个属性 -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
 	</settings>
 	<environments default="mysql">
 	<!-- 环境配置，即连接的数据库。 -->
@@ -28,5 +31,7 @@
       <mapper resource="mapper/UserMapper.xml"/>
       <mapper resource="mapper/CardMapper.xml"/>
       <mapper resource="mapper/PersonMapper.xml"/>
+      <mapper resource="mapper/ClazzMapper.xml"/>
+      <mapper resource="mapper/StudentMapper.xml"/>
   </mappers>
 </configuration>
