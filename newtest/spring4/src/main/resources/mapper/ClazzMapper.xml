@@ -9,9 +9,8 @@
     <resultMap id="clazzResultMap" type="org.zxy.domain.Clazz">
         <id property="id" column="id"/>
         <result property="code" column="code"/>
-        <result property="name" column="name"/>
         <collection property="students" column="id" javaType="ArrayList"
-                    ofType="org.zxy.domain.Student" select="org.zxy.mapper.StudentMapper.selectStudentByClazzId" fetchType="lazy">
+                    ofType="org.zxy.domain.Student" select="org.zxy.mapper.StudentMapper.selectSudentByClazszId" fetchType="lazy">
             <id property="id" column="id"/>
             <result property="name" column="name"/>
             <result property="sex" column="sex"/>
