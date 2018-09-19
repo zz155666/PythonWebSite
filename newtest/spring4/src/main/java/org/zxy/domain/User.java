@@ -1,6 +1,7 @@
 package org.zxy.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class User implements Serializable {
 
@@ -14,6 +15,9 @@ public class User implements Serializable {
     private String sex;
     // 用户年龄
     private Integer age;
+
+    // 用户和订单是一对多的关系，即一个用户可以有多个订单
+    private List<Order> orders;
 
     // 无参数构造器
     public User() {
@@ -50,6 +54,15 @@ public class User implements Serializable {
     }
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 
     @Override

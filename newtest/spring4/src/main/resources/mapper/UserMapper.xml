@@ -45,5 +45,23 @@
     <select id="selectUserMap" resultType="map">
         SELECT * FROM TB_USER
     </select>
+    
+    <resultMap id="userResultMap" type="org.zxy.domain.User">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="sex" column="sex"/>
+        <result property="age" column="age"/>
+        <collection property="orders" javaType="ArrayList"
+                    column="id" ofType="org.zxy.domain.User"
+                    select="org.zxy.mapper.OrderMapper.selectOrderByUserId" fetchType="lazy">
+            <id property="id" column="id"/>
+            <result property="code" column="code"/>
+            <result property="total" column="total"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectUserById" parameterType="int" resultMap="userResultMap">
+        SELECT * FROM TB_USER where id=#{id}
+    </select>
 
 </mapper>
