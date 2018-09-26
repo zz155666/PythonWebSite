@@ -30,5 +30,7 @@
   <!-- mappers告诉了MyBatis去哪里找持久化类的映射文件 -->
   <mappers>
       <mapper class="org.zxy.Mapper.UserMapper"/>
+      <mapper class="org.zxy.Mapper.CardMapper"/>
+      <mapper class="org.zxy.Mapper.PersonMapper"/>
   </mappers>
 </configuration>

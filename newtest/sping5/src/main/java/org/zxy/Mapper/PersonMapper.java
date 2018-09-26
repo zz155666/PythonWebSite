@@ -16,7 +16,7 @@ public interface PersonMapper {
             @Result(column="age",property="age"),
             @Result(column="card_id",property="card",
                     one=@One(
-                            select="org.fkit.mapper.CardMapper.selectCardById",
+                            select="org.zxy.mapper.CardMapper.selectCardById",
                             fetchType= FetchType.EAGER))
     })
     Person selectPersonById(Integer id);
