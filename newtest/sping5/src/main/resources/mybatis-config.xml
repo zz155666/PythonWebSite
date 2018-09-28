@@ -32,5 +32,7 @@
       <mapper class="org.zxy.Mapper.UserMapper"/>
       <mapper class="org.zxy.Mapper.CardMapper"/>
       <mapper class="org.zxy.Mapper.PersonMapper"/>
+      <mapper class="org.zxy.Mapper.ClazzMapper"/>
+      <mapper class="org.zxy.Mapper.StudentMapper"/>
   </mappers>
 </configuration>
