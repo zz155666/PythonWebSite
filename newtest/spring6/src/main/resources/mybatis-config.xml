@@ -29,11 +29,5 @@
   </environments>
   <!-- mappers告诉了MyBatis去哪里找持久化类的映射文件 -->
   <mappers>
-      <mapper class="org.zxy.Mapper.UserMapper"/>
-      <mapper class="org.zxy.Mapper.CardMapper"/>
-      <mapper class="org.zxy.Mapper.PersonMapper"/>
-      <mapper class="org.zxy.Mapper.ClazzMapper"/>
-      <mapper class="org.zxy.Mapper.StudentMapper"/>
-      <mapper class="org.zxy.Mapper.EmployMapper"/>
   </mappers>
 </configuration>
