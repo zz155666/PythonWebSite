@@ -83,6 +83,8 @@ dependencies {
     compile group: 'org.hibernate', name: 'hibernate-c3p0', version: '5.3.6.Final'
 // https://mvnrepository.com/artifact/com.mchange/mchange-commons-java
     compile group: 'com.mchange', name: 'mchange-commons-java', version: '0.2.15'
-
-
+// https://mvnrepository.com/artifact/org.springframework/spring-tx
+    compile group: 'org.springframework', name: 'spring-tx', version: '5.0.8.RELEASE'
+// https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+    compile group: 'org.springframework', name: 'spring-jdbc', version: '5.1.0.RELEASE'
 }
