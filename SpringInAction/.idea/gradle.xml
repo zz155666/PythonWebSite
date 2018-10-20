@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/Chapter_02" />
             <option value="$PROJECT_DIR$/Chapter_02/stereo-autoconfig" />
             <option value="$PROJECT_DIR$/Chapter_02/stereo-javaconfig" />
+            <option value="$PROJECT_DIR$/Chapter_02/stereo-xmlconfig" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
