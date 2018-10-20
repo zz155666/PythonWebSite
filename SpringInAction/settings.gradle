@@ -1,2 +1,6 @@
 rootProject.name = 'base'
+include 'Chapter_02:stereo-autoconfig'
+findProject(':Chapter_02:stereo-autoconfig')?.name = 'stereo-autoconfig'
+include 'Chapter_02:stereo-javaconfig'
+findProject(':Chapter_02:stereo-javaconfig')?.name = 'stereo-javaconfig'
 
